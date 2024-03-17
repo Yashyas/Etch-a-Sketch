@@ -44,9 +44,7 @@ footer,header,.box{
 .row{
     display: flex;
 }
-.hover{
-    background-color: rgb(2, 2, 2);
-}
+
 p,button{
 
     font-family: Bradley Hand, cursive;

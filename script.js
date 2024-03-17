@@ -37,8 +37,21 @@ function traceMouse(){
 
 // color of the hovering div 
 function color(event){
-    event.target.classList.add('hover');
+    if(flag=='black')
+         event.target.style.backgroundColor = 'black';
+    else if(flag=='rainbow')
+        event.target.style.backgroundColor = randomColor();
  }
+//  rainbow color generator , generates random color 
+function randomColor(){
+    let letter = '0123456789ABCDEF';
+    let color = '#';
+    for(i=0;i<6;i++){
+        color = color + letter[Math.floor(Math.random()*16)];
+    }
+    return color;
+
+}
 
 //  turn on the control buttons event listner 
  function controlsOn(){
@@ -52,8 +65,16 @@ function color(event){
 // Selection function for controls 
  function selection(event){
     let choice = event.target.id;
-    if(choice=='clear'){
-        clear();
+    switch(choice){
+        case 'clear':
+            clear();
+            break;
+        case 'rainbow':
+            flag = 'rainbow';
+            break;
+        case 'black':
+            flag = 'black';
+            break;
     }
  }
 
@@ -61,10 +82,11 @@ function color(event){
  function clear(){
     let clear =document.querySelectorAll('.column');
     clear.forEach(function(singleBox){
-    singleBox.classList.remove('hover');
+    singleBox.style.backgroundColor = 'aliceblue';
     });
  }
 
 //  main function 
+let flag = 'black';
 creation(size);
 controlsOn();
