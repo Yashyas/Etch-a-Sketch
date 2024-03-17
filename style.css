@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: #ff6a00;
+}
+footer,header,.container,.box{
+    border: solid black 2px;
+    margin: 2px;
+}
+.container{
+    width: auto;
+    flex-basis: 550px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.box{
+    flex-basis: 500px;
+    display: flex;
+    flex-direction: column;
+
+    /* width: w; */
+}
+.row,.column{
+    
+    flex: 1;
+    background-color: aliceblue;
+    width: auto;
+    height: auto;
+    border: solid black 1px;
+}
+.row{
+    display: flex;
+}
+footer{
+    margin-top: auto;
+}
