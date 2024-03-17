@@ -29,10 +29,17 @@ footer,header,.container,.box{
     background-color: aliceblue;
     width: auto;
     height: auto;
-    border: solid black 1px;
+    
+    
+}
+.column{
+     border: solid black 0.1px;
 }
 .row{
     display: flex;
+}
+.hover{
+    background-color: rgb(2, 2, 2);
 }
 footer{
     margin-top: auto;
