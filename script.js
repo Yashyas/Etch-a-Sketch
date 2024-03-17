@@ -1,4 +1,4 @@
-let size = Number(prompt("Enter the size of grid:"));
+// let size = Number(prompt("Enter the size of grid:"));
 
 // function to create divs in square format 
 function creation(size){
@@ -75,8 +75,12 @@ function randomColor(){
         case 'black':
             flag = 'black';
             break;
+        case 'resize':
+            resize();
+            break;   
     }
  }
+
 
 //  function to clear all the box selected
  function clear(){
@@ -86,7 +90,20 @@ function randomColor(){
     });
  }
 
+ //  Resize prompt 
+ function resize(){
+    let size = Number(prompt("Enter the size of grid:"));
+    let column = document.querySelectorAll('.column');
+    column.forEach(function(del){
+        del.remove();
+    });
+    let row= document.querySelectorAll('.row');
+    row.forEach(function(del){
+        del.remove();
+    });
+    creation(size);
+ }
 //  main function 
 let flag = 'black';
-creation(size);
+resize();
 controlsOn();
